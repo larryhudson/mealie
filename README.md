@@ -43,6 +43,8 @@ Mealie is a self hosted recipe manager, meal planner and shopping list with a Re
 - [Remember to join the Discord](https://discord.gg/QuStdQGSGK)!
 - [Documentation](https://docs.mealie.io/)
 
+> When running locally, the app is available at http://localhost:3000.
+
 
 ## Key Features
 - Recipe imports: Create recipes, by **importing from a URL** or entering data manually
