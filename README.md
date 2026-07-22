@@ -60,6 +60,13 @@ Contributions are what make the open source community such an amazing place to l
 - See the [Contributors Guide](https://nightly.mealie.io/contributors/developers-guide/code-contributions/) for help getting started.
 - We use [VSCode Dev Containers](https://code.visualstudio.com/docs/remote/containers) to make it easy for contributors to get started!
 
+### Running from source
+
+For local development without containers, run the backend and frontend separately:
+
+- Backend: `uv run python mealie/app.py`, served on port `9000`
+- Frontend: `yarn run dev`, served on port `3000`
+
 If you are not a coder, you can still contribute financially. Financial contributions help me prioritize working on this project over others and helps me know that there is a real demand for project development.
 
 <a href="https://www.buymeacoffee.com/haykot" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 30px !important;width: 107px !important;" ></a>
