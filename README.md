@@ -59,6 +59,7 @@ Contributions are what make the open source community such an amazing place to l
 
 - See the [Contributors Guide](https://nightly.mealie.io/contributors/developers-guide/code-contributions/) for help getting started.
 - We use [VSCode Dev Containers](https://code.visualstudio.com/docs/remote/containers) to make it easy for contributors to get started!
+- When running the backend locally, explore the interactive API docs at [http://localhost:9000/docs](http://localhost:9000/docs).
 
 If you are not a coder, you can still contribute financially. Financial contributions help me prioritize working on this project over others and helps me know that there is a real demand for project development.
 
