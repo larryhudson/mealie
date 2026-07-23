@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+REPO_DIR="${AGENT_REPO_DIR:-$PWD}"
+. "$REPO_DIR/.agent/env.sh"
+WEB="http://127.0.0.1:${FRONTEND_PORT}"
+echo "waiting for $WEB ..."
+for i in $(seq 1 120); do
+  code=$(curl -sS -o /dev/null --max-time 3 -w "%{http_code}" "$WEB" 2>/dev/null || echo 000)
+  if [ "$code" != "000" ]; then echo "web ready (http $code, ${i}x2s)"; exit 0; fi
+  sleep 2
+done
+echo "timeout waiting for $WEB" >&2; exit 1
