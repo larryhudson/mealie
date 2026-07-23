@@ -53,9 +53,12 @@
         </v-toolbar-title>
       </v-toolbar>
       <AppLogo :size="100" />
-      <v-card-title class="text-h5 justify-center pb-3">
+      <v-card-title class="text-h5 justify-center pb-0">
         {{ $t('user.sign-in') }}
       </v-card-title>
+      <v-card-subtitle class="text-center pb-3">
+        {{ $t('user.sign-in-subtitle') }}
+      </v-card-subtitle>
       <v-card-text class="w-100">
         <v-form @submit.prevent="authenticate">
           <v-text-field
