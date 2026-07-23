@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -uo pipefail
+: "${AGENT_LOG_DIR:?}"
+for f in backend frontend; do
+  [ -f "$AGENT_LOG_DIR/$f.pid" ] && kill "$(cat "$AGENT_LOG_DIR/$f.pid")" 2>/dev/null || true
+done
+exit 0
