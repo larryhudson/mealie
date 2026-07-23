@@ -1,0 +1,17 @@
+name: agent-ci
+on:
+  pull_request:
+    branches: [mealie-next]
+jobs:
+  marker-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require CI marker in README
+        run: |
+          if ! grep -q "<!-- ci-marker -->" README.md; then
+            echo "FAIL: README.md is missing the required marker."
+            echo "To fix: add a line containing exactly '<!-- ci-marker -->' to README.md, then commit."
+            exit 1
+          fi
+          echo "OK: CI marker present."
