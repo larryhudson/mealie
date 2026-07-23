@@ -53,6 +53,9 @@
         </v-toolbar-title>
       </v-toolbar>
       <AppLogo :size="100" />
+      <p class="text-center text-body-2 mb-2 px-4">
+        Welcome to Mealie. Sign in to start planning your meals.
+      </p>
       <v-card-title class="text-h5 justify-center pb-3">
         {{ $t('user.sign-in') }}
       </v-card-title>
