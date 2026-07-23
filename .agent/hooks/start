@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+REPO_DIR="${AGENT_REPO_DIR:-$PWD}"
+: "${AGENT_LOG_DIR:?AGENT_LOG_DIR must be set}"
+mkdir -p "$AGENT_LOG_DIR"
+cd "$REPO_DIR"
+. "$REPO_DIR/.agent/env.sh"
+echo "==> starting backend on :$BACKEND_PORT"
+nohup env PRODUCTION=false uv run python mealie/app.py >"$AGENT_LOG_DIR/backend.log" 2>&1 </dev/null &
+echo $! >"$AGENT_LOG_DIR/backend.pid"
+echo "==> starting frontend on :$FRONTEND_PORT"
+( cd frontend && nohup yarn run dev --no-fork >"$AGENT_LOG_DIR/frontend.log" 2>&1 </dev/null & echo $! >"$AGENT_LOG_DIR/frontend.pid" )
+echo "==> start issued"
