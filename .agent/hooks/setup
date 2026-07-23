@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+REPO_DIR="${AGENT_REPO_DIR:-$PWD}"
+cd "$REPO_DIR"
+. "$REPO_DIR/.agent/env.sh"
+echo "==> uv sync (backend deps)"
+uv sync
+echo "==> yarn install (frontend deps)"
+( cd frontend && yarn install )
+echo "==> setup complete"
